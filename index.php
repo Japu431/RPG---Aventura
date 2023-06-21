@@ -1,58 +1,63 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html>
 
-<h1>Seja bem vindo a Jornada Épica</h1>
+<head>
+    <title>Gerenciamento de Fichas de Personagens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<table class="table">
-    <thead class="table-head">
-        <tr>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Vida</th>
-                        <th>Escudo</th>
-                        <th>Dano</th>
-                        <th>Força</th>
-                        <th>Destreza</th>
-                        <th>Inteligência </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Matheus</td>
-                        <td>100</td>
-                        <td>50</td>
-                        <td>1</td>
-                        <td>-5</td>
-                        <td>10</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>Gustavo</td>
-                        <td>100</td>
-                        <td>50</td>
-                        <td>2-3</td>
-                        <td>-10</td>
-                        <td>10</td>
-                        <td>20</td>
-                    </tr>
-                    <tr>
-                        <td>Lucas</td>
-                        <td>100</td>
-                        <td>60</td>
-                        <td>4-5</td>
-                        <td>-15</td>
-                        <td>10</td>
-                        <td>40</td>
-                    </tr>
-                    <tr>
-                        <td>Caio</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>6-7</td>
-                        <td>-20</td>
-                        <td>10</td>
-                        <td>50</td>
-                </tr>
-        </tbody>
-</table>
+<body>
+    <h1>Gerenciamento de Fichas de Personagens</h1>
+
+    <h2>Criar Ficha de Personagem</h2>
+    <form method="POST" action="crud.php">
+        <label>Nome:</label>
+        <input type="text" name="nome" required><br>
+
+        <label for="classe"> Classe desejada:
+            <select id="classe">
+                <option value="Guerreiro">Guerreiro</option>
+                <option value="Mago">Mago</option>
+                <option value="Atirador">Atirador</option>
+                <option value="Assassino" selected>Assassino</option>
+            </select>
+        </label>
+
+        <input type="submit" name="create" value="Criar">
+    </form>
+
+    <h2>Buscar Ficha de Personagem</h2>
+    <form method="GET" action="crud.php">
+        <label>ID:</label>
+        <input type="number" name="caracterId" required><br>
+        <input type="submit" name="read" value="Buscar">
+    </form>
+
+    <h2>Atualizar Ficha de Personagem</h2>
+    <form method="POST" action="crud.php">
+        <label>ID:</label>
+        <input type="number" name="caracterId" required><br>
+        <label>Nome:</label>
+        <input type="text" name="name" required><br>
+        <label>Sorte:</label>
+        <input type="number" name="sorte" required><br>
+        <label>Dano do Item:</label>
+        <input type="number" name="item dano" required><br>
+        <label>Destreza:</label>
+        <input type="number" name="destreza" required><br>
+        <label>Inteligência:</label>
+        <input type="number" name="inteligencia" required><br>
+        <label>Força:</label>
+        <input type="number" name="vida" required><br>
+        <input type="submit" name="update" value="Atualizar">
+    </form>
+
+    <h2>Deletar Ficha de Personagem</h2>
+    <form method="POST" action="crud.php">
+        <label>ID:</label>
+        <input type="number" name="caracterId" required><br>
+        <input type="submit" name="delete" value="Deletar">
+    </form>
+</body>
+
+</html>
